@@ -1,0 +1,55 @@
+﻿@model AddWorkExperienceViewModel
+
+@*     <title>Add New Work Experience</title>
+ *@    <h1>Add New Work Experience</h1>
+
+<form method="post" asp-action="addWorkExperience" asp-controller="profile" style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+    <p>
+        <label asp-for="JobTitle"></label> <span style="color:red">*</span>
+    </p>
+    <p><span asp-validation-for="JobTitle" style="color:red"></span></p>
+    <input asp-for="JobTitle" placeholder="Enter Job Title" />
+
+<p>
+        <label asp-for="Organization"></label> <span style="color:red">*</span>
+</p>
+    <p><span asp-validation-for="Organization" style="color:red"></span></p>
+    <input asp-for="Organization" placeholder="Enter Organization" />
+
+    <p>
+        <label asp-for="StartDate"></label> <span style="color:red">*</span>
+    </p>
+    <p>
+        <span asp-validation-for="StartDate" style="color:red"></span>
+    </p>
+    <input asp-for="StartDate" placeholder="Enter Job Start Date" />
+    <p>
+        <label asp-for="EndDate"></label> <span style="color:red">*</span>
+    </p>
+    <p>
+        <span asp-validation-for="EndDate" style="color:red"></span>
+    </p>
+    <input asp-for="EndDate" placeholder="Enter Job End Date" />
+    <p>
+        <label asp-for="Achievements"></label> <span style="color:red">*</span>
+    </p>
+    <p><span asp-validation-for="Achievements" style="color:red"></span></p>
+    <textarea cols="50" rows="10" asp-for="Achievements" placeholder="Enter achievements"></textarea>
+
+    <p>
+        <button type="submit" class="add-btn" style="background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;">
+            Submit
+        </button>
+
+    </p>
+</form>
+

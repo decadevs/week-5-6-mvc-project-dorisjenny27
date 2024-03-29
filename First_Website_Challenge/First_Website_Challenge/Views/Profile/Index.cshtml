@@ -1,0 +1,40 @@
+﻿@model ProfileViewModel
+
+@{
+    ViewData["Title"] = "Profile Page";
+}
+
+    <title>Work Experience</title>
+    <a asp-action="AddWorkExperience" asp-controller="Profile" class="btn btn-primary">Add New Work Experience</a>
+
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h1 style="color: wheat; text-align: center;">Work Experience</h1>
+        
+    @foreach (var workExperience in Model.WorkExperiences)
+    {
+        <div style="margin-bottom: 20px;">
+            <h3 style="color: black;"><i>@workExperience.JobTitle</i></h3>
+            <h4 style="color: black;"><i>@workExperience.Organization</i></h4>
+            <p style="color: darkgoldenrod;">@workExperience.StartDate-@workExperience.EndDate</p>
+            <p>@workExperience.Achievements</p>
+
+            <a asp-controller="Profile" asp-action="UpdateWorkExperience" asp-route-id="@workExperience.Id" class="btn btn-primary">Update</a>
+            <a asp-controller="Profile" asp-action="DeleteWorkExperience" asp-route-id="@workExperience.Id" class="btn btn-primary">Delete</a>
+        </div>
+    }
+
+    @* Worked with a range of large and small agencies, start-ups and individuals to build products. Clients included Marvel App, United Nations, Netflix, Dropbox Design. *@
+
+    @* <div style="margin-bottom: 20px;">
+            <h3 style="color: black;"><i>Front End Engineer - Freelance</i></h3>
+            <p style="color: darkgoldenrod;">2023-2022</p>
+            <p>Worked with a range of large and small agencies, start-ups and individuals to build products. Clients included Marvel App, United Nations, Netflix, Dropbox Design.</p>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <h3 style="color: black;"><i>Front End Engineer</i></h3>
+            <p style="color: darkgoldenrod;">2022-2021</p>
+            <p>Part of a tight-knit team of designers, developers and critical thinkers, I built MVP products and marketing experiences for start-ups.</p>
+        </div> *@
+    </div>
+

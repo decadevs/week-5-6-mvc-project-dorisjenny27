@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\First_Website_Challenge.props" />
+</Project>
